@@ -57,3 +57,4 @@ echo "virtualenvwrapper"
 
 echo "And finally, do a source ~/.zshrc"
 echo "~ fin."
+
