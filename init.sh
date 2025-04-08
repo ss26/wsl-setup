@@ -33,6 +33,18 @@ echo 'eval "$(starship init zsh)"' >> ~/.zshrc
 
 sudo apt update
 
+# github setup
+git config --global init.defaultBranch main
+read -p "Enter your name for GitHub: " name
+git config --global user.name "$name"
+read -p "Enter your email ID for GitHub: " email
+git config --global user.email "$email"
+
+# ssh key setup
+ssh-keygen -t ed25519 -C "$email"
+cat ~/.ssh/id_ed25519.pub
+git config --global user.signingkey $HOME/.ssh/id_ed25519.pub
+
 echo -e "\e[1;32mUbuntu is set up successfully! Open ~/.zshrc and add the following plugins under oh-my-zsh's plugins field.\e[0m"
 echo "1password"
 echo "emoji-clock"
