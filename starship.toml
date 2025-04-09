@@ -1,6 +1,7 @@
 format = """\
 [](bg:#030B16 fg:#7DF9AA)\
 [ ](bg:#7DF9AA fg:#090c0c)\
+${custom.virtualenv}\
 [](fg:#7DF9AA bg:#1C3A5E)\
 $time\
 [](fg:#1C3A5E bg:#3B76F0)\
@@ -50,4 +51,11 @@ disabled = false
 time_format = "%R" # Hour:Minute Format
 style = "bg:#1d2230"
 format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
+
+[custom.virtualenv]
+command = "if [ -n \"$VIRTUAL_ENV_PROMPT\" ]; then echo \"$VIRTUAL_ENV_PROMPT\"; fi"
+when = "test -n \"$VIRTUAL_ENV_PROMPT\""
+format = "[$symbol$output]($style)"
+symbol = " "
+style = "bg:#7DF9AA fg:#090c0c"
 
