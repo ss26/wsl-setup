@@ -43,6 +43,7 @@ git config --global user.email "$email"
 # ssh key setup
 ssh-keygen -t ed25519 -C "$email"
 cat ~/.ssh/id_ed25519.pub
+git config --global gpg.format ssh
 git config --global user.signingkey $HOME/.ssh/id_ed25519.pub
 
 echo -e "\e[1;32mUbuntu is set up successfully! Open ~/.zshrc and add the following plugins under oh-my-zsh's plugins field.\e[0m"
@@ -55,5 +56,6 @@ echo "rand-quote"
 echo "themes"
 echo "virtualenvwrapper"
 
-echo "And finally, do a source ~/.zshrc"
-echo "~ fin."
+echo -e "\e[1;32mIn GitHub, go to SSH and GPG keys -> Disable Vigilant Mode so commits are verified by the ssh key.\e[0m"
+echo -e "\e[1;32mAnd finally, do a source ~/.zshrc\e[0m"
+echo -e "\e[1;32m~ fin.\e[0m"
